@@ -11,20 +11,34 @@ public abstract class Animal {
 
     public abstract void sleep();
 
-    public abstract int getAge();
+    public int getAge() {
+        return age;
+    }
 
-    public abstract void setAge(int age);
+    public void setAge(int age) {
+        this.age = age;
+    }
 
-    public abstract String getName();
+    public String getName() {
+        return name;
+    }
 
-    public abstract void setName(String name);
+    public void setName(String name) {
+        this.name = name;
+    }
 
-    public abstract String getColor();
+    public String getColor() {
+        return color;
+    }
 
-    public abstract void setColor(String color);
+    public void setColor(String color) {
+        this.color = color;
+    }
 
     @Override
-    public abstract String toString();
+    public String toString() {
+        return getName() + " The " + getClass().getSimpleName() + " is " + getAge() + ", and colored " + getColor();
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -34,5 +48,5 @@ public abstract class Animal {
     }
 
     @Override
-    protected abstract Object clone();
+    public abstract Object clone();
 }

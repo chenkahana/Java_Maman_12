@@ -3,6 +3,8 @@ package POJO.Mammels;
 import POJO.Abstract.Mammal;
 import POJO.Owner;
 
+import java.util.Objects;
+
 public class Dog extends Mammal {
 
     private Owner owner;
@@ -24,51 +26,32 @@ public class Dog extends Mammal {
 
     @Override
     public void eat() {
-
+        System.out.println(getName() + " the Dog is eating");
     }
 
     @Override
     public void sleep() {
-
-    }
-
-    @Override
-    public int getAge() {
-        return 0;
-    }
-
-    @Override
-    public void setAge(int age) {
-
-    }
-
-    @Override
-    public String getName() {
-        return null;
-    }
-
-    @Override
-    public void setName(String name) {
-
-    }
-
-    @Override
-    public String getColor() {
-        return null;
-    }
-
-    @Override
-    public void setColor(String color) {
-
+        System.out.println(getName() + " the Dog is sleeping");
     }
 
     @Override
     public String toString() {
-        return null;
+        return super.toString() + " and it's owner is " + getOwner();
     }
 
     @Override
-    protected Object clone() {
+    public Object clone() {
         return new Dog(owner, getAge(), getName(), getColor());
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        Dog dog = (Dog) o;
+        return super.equals(o) && Objects.equals(owner, dog.owner);
+    }
+
+    @Override
+    public void growFur() {
+        System.out.println(getName() + " the Dog is growing fur");
     }
 }

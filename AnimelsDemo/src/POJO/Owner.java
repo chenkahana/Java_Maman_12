@@ -25,4 +25,9 @@ public class Owner {
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
+
+    @Override
+    public String toString() {
+        return getName() + " and he's phone number is: " + getPhoneNumber();
+    }
 }
